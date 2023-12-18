@@ -15,5 +15,5 @@ class Solution:
                 if myMap[j] == i and j not in count:
                     res.append(j)
                     count.append(j)
-
+        
         return res
