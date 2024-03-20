@@ -3,10 +3,17 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        r = len(s)-1
-        for x in range(len(s)//2):
-            l = s[x]
-            s[x] = s[r]
-            s[r] = l
-            r-=1
+        def helper( left:int, right:int, string: List[str]):     
+            
+            if left > right:
+                # base case
+                return
+            
+            # general case
+            s[left], s[right] = s[right], s[left]
+            
+            helper( left+1, right-1, s)
+        # ------------------------------------------------
+        
+        helper( left = 0, right = len(s)-1, string = s)
         
