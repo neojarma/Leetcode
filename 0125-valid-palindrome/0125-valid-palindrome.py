@@ -20,6 +20,3 @@ class Solution:
             r -= 1
         
         return True
-            
-    def isAlphaNum(self, letter):
-        return letter.isalnum()
