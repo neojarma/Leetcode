@@ -9,9 +9,15 @@ class Solution:
         l1, l2 = headA, headB
         
         while l1 != l2:
-            l1 = l1.next if l1 else headB
+            if l1:
+                l1 = l1.next
+            else:
+                l1 = headB
             
-            l2 = l2.next if l2 else headA
+            if l2:
+                l2 = l2.next
+            else:
+                l2 = headA
         
         return l1
             
