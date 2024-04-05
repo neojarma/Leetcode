@@ -13,8 +13,5 @@ class Solution:
             
             mid = (r + l)//2
         
-        if mid < 0:
-            return 0
-        
         return mid + 1
         
