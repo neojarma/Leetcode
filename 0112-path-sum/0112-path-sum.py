@@ -16,8 +16,7 @@ class Solution:
             if not root.left and not root.right:
                 if curr == targetSum:
                     return True
-            
-                    
+     
             return helper(root.left, curr) or helper(root.right, curr)
         
         return helper(root, 0)
