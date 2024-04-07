@@ -16,11 +16,8 @@ class Solution:
                     return True
             
             return helper(node.left) or helper(node.right)
-            
                 
         def isEqual(r1, r2):
-            
-            
             if not r1 and not r2:
                 return True
             
