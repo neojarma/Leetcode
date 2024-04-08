@@ -8,10 +8,7 @@ class Solution:
         # 1 1 1 2
         # 1 2 3 4
         # 1 2 2 3
-        
-        dummy = ListNode(-200)
-        dummy.next = head
-        curr = dummy
+        curr = head
         
         while curr and curr.next:
             if curr.val == curr.next.val:
@@ -19,4 +16,4 @@ class Solution:
             else:
                 curr = curr.next
                 
-        return dummy.next
+        return head
