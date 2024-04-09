@@ -3,17 +3,9 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        def helper( left:int, right:int, string: List[str]):     
-            
-            if left > right:
-                # base case
-                return
-            
-            # general case
-            s[left], s[right] = s[right], s[left]
-            
-            helper( left+1, right-1, s)
-        # ------------------------------------------------
+        l,r = 0, len(s)-1
         
-        helper( left = 0, right = len(s)-1, string = s)
-        
+        while l < r:
+            s[l], s[r] = s[r], s[l]
+            l+=1
+            r-=1
