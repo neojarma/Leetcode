@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
-        pair = []
+        res = set()
         
         def helper(node, string):
             if not node:
@@ -14,12 +14,16 @@ class Solution:
             
             string += chr(node.val+97)
             if not node.left and not node.right:
-                pair.append(string[::-1])
+                reverseStr = string[::-1]
+                if res:
+                    prev = res.pop()
+                    res.add(min(prev, reverseStr))
+                else:
+                    res.add(reverseStr)
                 return 
             
             helper(node.left, string) 
             helper(node.right,string)
             
         helper(root,'')
-        pair.sort()
-        return pair[0]
+        return res.pop()
