@@ -1,8 +1,5 @@
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        # 1 * 1 *(8) = 8
-        # 7*7*7  = 343
-        # 64*5 = 320
         res = 0
         
         l, r = 0, len(height)-1
