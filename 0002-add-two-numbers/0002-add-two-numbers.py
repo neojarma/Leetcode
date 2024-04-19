@@ -13,15 +13,11 @@ class Solution:
             l1val = l1.val if l1 else 0
             l2val = l2.val if l2 else 0
             total = l1val + l2val + remain
-            if total > 9:
-                remain = total // 10
-                curr.next = ListNode(total%10)
-                curr = curr.next
-            else:
-                curr.next = ListNode(total)
-                curr = curr.next
-                remain = 0
-                
+
+            remain = total // 10
+            curr.next = ListNode(total%10)
+            curr = curr.next
+
             if l1: l1 = l1.next
             if l2: l2 = l2.next
         
